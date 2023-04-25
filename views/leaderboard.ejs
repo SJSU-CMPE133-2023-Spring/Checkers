@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Checkers</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="leaderboard.css" />
+  </head>
+  <body>
+    <!-- <style>
+      .rowfont{
+        color: white;
+      }
+    </style> -->
+    <div style="isolation: isolate" class="about-section">
+      <h2 style="font-family: courgette">Leaderboard</h2>
+    </div>
+    <%numberSort = function (a,b) { return a - b }%> <% arr=[]%> <%for(var i =
+    0; i< data.length; i++) {%> <% arr.push(data[i].score) %> <%}%> <%
+    arr.sort(numberSort)%>
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Best Win Moves</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%j=arr.length-1 %> <%k=1%><% while(j >=0 ){%> <%if(data.length){
+          for(var i = 0; i< data.length; i++) {%>
+          <tr>
+            <% if(arr[j]==data[i].score){%>
+            <td class="rowfont"><%= (k) %></td>
+            <td class="rowfont"><%= data[i].name%></td>
+            <td class="rowfont"><%= data[i].score%></td>
+            <td class="rowfont"><%= data[i].min_moves%></td>
+            <%j-- %><%k++}%>
+          </tr>
+          <% } }else{ %>
+          <tr>
+            <td colspan="3">No user</td>
+          </tr>
+          <% } %> <% } %>
+        </tbody>
+      </table>
+    </div>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="index.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="../routes/leaderboard.js"
+    ></script>
+  </body>
+</html>
