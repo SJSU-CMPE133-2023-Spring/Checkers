@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    div.center-text
+        h1= title
+        p Welcome to #{title}
+
+        a(href='/play'): button Play
+        a(href='/theme'): button Options
+        button Profile

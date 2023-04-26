@@ -1,0 +1,24 @@
+extends layout
+
+
+
+block content
+    a(href='/'): button Home
+    br
+    button.theme1(onclick="changeTheme('#f0d9b5', '#b58863')")
+
+    button.theme2(onclick="changeTheme('white', 'black')")
+    br
+    button.theme3(onclick="changeTheme('#ffffdd', '#b6a666')")
+
+    button.theme4(onclick="changeTheme('#f1f6b3', '#58945d')")
+    br
+    button.theme5(onclick="changeTheme('#dee3e6', '#8ca2ad')")
+    button.theme6(onclick="changeTheme('#9f90b0', '#7d4a8d')")
+
+    div.board.center
+        each rownum in [8, 7, 6, 5, 4, 3, 2, 1]
+            each colnum in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+                - var color = ((rownum + colnum.charCodeAt(0)) % 2 === 0) ? 'black' : 'white'
+                div.square(class=color)
+                    span(class='piece')

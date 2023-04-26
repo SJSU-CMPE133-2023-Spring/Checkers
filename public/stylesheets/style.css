@@ -1,0 +1,89 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: lightgray;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h1 {
+  horiz-align: center;
+}
+
+p {
+  horiz-align: center;
+}
+
+div.center-text {
+  text-align: center;
+}
+
+button {
+  margin: 10px;
+  width: 100px;
+  height: 50px;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+}
+.square {
+  width: 50px;
+  height: 50px;
+}
+.white {
+  background-color: #f0d9b5;
+}
+.black {
+  background-color: #b58863;
+}
+
+.white-piece {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: lightgoldenrodyellow;
+  display: inline-block;
+}
+
+.black-piece {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: saddlebrown;
+  display: inline-block;
+}
+
+.theme1 {
+  background: linear-gradient(to right, #f0d9b5 50%, #b58863 50%);
+}
+
+.theme2 {
+  background: linear-gradient(to right, white 50%, black 50%);
+}
+
+.theme3 {
+  background: linear-gradient(to right, #ffffdd 50%, #b6a666 50%);
+}
+
+.theme4 {
+  background: linear-gradient(to right, #f1f6b3 50%, #58945d 50%);
+}
+
+.theme5 {
+  background: linear-gradient(to right, #dee3e6 50%, #8ca2ad 50%);
+}
+
+.theme6 {
+  background: linear-gradient(to right, #9f90b0 50%, #7d4a8d 50%);
+}

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    a(href='/'): button Home
+    p User 1
+    div.board
+        each rownum in [8, 7, 6, 5, 4, 3, 2, 1]
+            each colnum in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+                - var color = ((rownum + colnum.charCodeAt(0)) % 2 === 0) ? 'black' : 'white'
+                div.square(class=color)
+                    if color === 'black' && (rownum === 1 || rownum === 2 || rownum === 3)
+                        div.white-piece
+                        span(class='piece')
+                    else if color === 'black' && (rownum === 6 || rownum === 7 || rownum === 8)
+                        div.black-piece
+                        span(class='piece')
+    p User 2

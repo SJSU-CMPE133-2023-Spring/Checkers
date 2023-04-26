@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+    block content
+
+script.
+  function changeTheme(white, black) {
+    const whites = document.getElementsByClassName("white")
+    const blacks = document.getElementsByClassName("black")
+    for (let i = 0; i < whites.length; i++) {
+      whites[i].style.backgroundColor = white;
+    }
+    for (let i = 0; i < blacks.length; i++) {
+      blacks[i].style.backgroundColor = black;
+    }
+  }

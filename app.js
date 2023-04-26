@@ -1,64 +1,41 @@
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 
-const express = require("express");
-const expressLayout = require("express-ejs-layouts");
-const mongoose = require("mongoose");
-const flash = require("connect-flash");
-const session = require("express-session");
-const passport = require("passport");
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 
-const app = express();
+var app = express();
 
-//Passport config
-require("./config/passport")(passport);
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
-//DB config
-const db = require("./config/keys").MongoURI;
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-//Connect to mongo
-mongoose
-  .set("strictQuery", false)
-  .connect(db, { useNewUrlparser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err)); //Cluster connected only
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
-//EJS
-app.use(expressLayout);
-app.set("view engine", "ejs");
-
-app.use(express.static(__dirname + "/static"));
-
-//BodyParser
-app.use(express.urlencoded({ extended: false })); //Allows to get data from form using req.body
-
-//Express session middleware
-app.use(
-  session({
-    secret: "secret",
-    resave: true,
-    saveUninitialized: true,
-  })
-);
-
-//Passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
-
-//Connect flash
-app.use(flash()); // Use to display message after redirect to different page
-
-//Global Vars
-app.use((req, res, next) => {
-  res.locals.success_msg = req.flash("success_msg");
-  res.locals.error_msg = req.flash("error_msg");
-  res.locals.error = req.flash("error");
-  next();
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
 });
 
-// Routes
-app.use("/", require("./routes/index"));
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-app.use("/users", require("./routes/users"));
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
 
-const PORT = process.env.PORT || 1324;
-
-app.listen(PORT, console.log(`SERVER STARTED at ${PORT}`));
+module.exports = app;
