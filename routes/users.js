@@ -192,13 +192,22 @@ router.post("/forgetpass", (req, res, next) => {
 });
 
 //logout Handle
-router.get("/logout", (req, res) => {
-  req.logout(); //Using passport middleware
-  req.flash("success_msg", "You are successfully logged out");
-  res.render("login", {
-    log: false,
-    dash: req.isDashed,
+router.get('/logout', function(req, res){
+  req.logout(function(err) {
+      if (err) {
+          console.log(err);
+      }
+      res.redirect('/');
   });
 });
+
+// router.get("/logout", (req, res) => {
+//   req.logout(); //Using passport middleware
+//   req.flash("success_msg", "You are successfully logged out");
+//   res.render("login", {
+//     log: false,
+//     dash: req.isDashed,
+//   });
+// });
 
 module.exports = router;
