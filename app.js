@@ -59,6 +59,16 @@ app.use("/", require("./routes/index"));
 
 app.use("/users", require("./routes/users"));
 
-const PORT = process.env.PORT || 1332;
+
+// Route for handling logout
+app.get('/users/logout', (req, res) => {
+  req.logout();
+  req.flash('success_msg', 'You are logged out');
+  res.redirect('/users/login');
+});
+
+
+const PORT = process.env.PORT || 1336;
+
 
 app.listen(PORT, console.log(`SERVER STARTED at ${PORT}`));
