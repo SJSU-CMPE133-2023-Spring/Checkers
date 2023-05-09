@@ -68,7 +68,7 @@ app.get('/users/logout', (req, res) => {
 });
 
 
-const PORT = process.env.PORT || 1342;
+const PORT = process.env.PORT || 1350;
 
 
 app.listen(PORT, console.log(`SERVER STARTED at ${PORT}`));
