@@ -19,7 +19,7 @@ mongoose
   .set("strictQuery", false)
   .connect(db, { useNewUrlparser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err)); //Cluster connected only
+  .catch((err) => console.log(err));//Cluster connected only
 
 //EJS
 app.use(expressLayout);
@@ -59,6 +59,7 @@ app.use("/", require("./routes/index"));
 
 app.use("/users", require("./routes/users"));
 
+
 // Route for handling logout
 app.get('/users/logout', (req, res) => {
   req.logout();
@@ -67,6 +68,7 @@ app.get('/users/logout', (req, res) => {
 });
 
 
-const PORT = process.env.PORT || 1324;
+const PORT = process.env.PORT || 1342;
+
 
 app.listen(PORT, console.log(`SERVER STARTED at ${PORT}`));

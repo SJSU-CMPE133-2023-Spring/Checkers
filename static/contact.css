@@ -1,3 +1,4 @@
+/*
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -10,7 +11,7 @@
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
     list-style: none;
-    /* padding: 10px 30px; */
+    
   }
   a {
     text-decoration: none;
@@ -19,7 +20,7 @@
   #header {
     background-color: rgb(249, 251, 251);
     position: fixed;
-    /* display: block; */
+    
     box-shadow: 5px 2px 15px 1px rgb(172, 230, 230);
     z-index: 5;
     width: 100%;
@@ -82,8 +83,7 @@
     border-bottom: 2px solid rgb(113, 190, 226);
     outline: none;
     font: 105px;
-    /* cursor: pointer; */
-    /* font-family: 'Pattaya', sans-serif; */
+    
     letter-spacing: 2px;
     background: none;
     color: black;
@@ -91,11 +91,7 @@
     background-color: rgb(211, 255, 240);
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   }
-  /* input:focus{
-      background-color: blue;
-      border: 5px solid white;
-      color: white;
-  } */
+  
   select {
     cursor: pointer;
     color: #797979;
@@ -115,7 +111,7 @@
     height: 100px;
   }
   form:hover {
-    /* background-color: aqua; */
+    
     background: #88bcdd no-repeat center center;
     background-size: cover;
     border: 2px solid rgb(255, 255, 255);
@@ -123,16 +119,16 @@
   .btn {
     margin: 4px auto;
     width: 100px;
-    /* border: 2px solid black; */
+    
     padding: 8px 5px;
-    /* background-color: aqua; */
+    
     border-radius: 5px;
     font-size: large;
     font-weight: 900;
     cursor: pointer;
   }
   .btn:hover {
-    /* background-color: yellow; */
+    
     color: black;
   }
   
@@ -140,5 +136,6 @@
     font-size: 20px;
     color: rgb(255, 255, 255);
     opacity: 0.5;
-    /* background: none; */
+    
   }
+  */

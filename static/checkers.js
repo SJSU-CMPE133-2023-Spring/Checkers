@@ -196,7 +196,7 @@ function drawPiece(piece) {
     );
     if (piece.king) {
       noFill();
-      stroke(247, 191, 51);
+      stroke(250, 150, 71);
       rect(x + SQUARE_WIDTH / 2 - 10, y + SQUARE_WIDTH / 2 - 10, 20, 20);
     }
   }
