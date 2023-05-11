@@ -1,4 +1,4 @@
-# ChProject Title
+# Checkers
 Website where users can play checkers against AI.
 
 <h1>Table of Contents</h1>
