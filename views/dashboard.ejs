@@ -86,25 +86,26 @@
           </a>
         </button>
         <button
-                style="
+          style="
 
-            padding: 5px 15px;
-            background-color: #658ae9;
-            font-size: 20px;
-            text-decoration: none;
-            color: #000000;
-          "
-                type="button"
-                class="btn btn-success"
-                id="surrender"
-                value="undefined"
-                onclick="surrender()"
+      padding: 5px 15px;
+      background-color: #658ae9;
+      font-size: 20px;
+      text-decoration: none;
+      color: #000000;
+    "
+          type="button"
+          class="btn btn-success"
+          id="surrender"
+          value="undefined"
+          onclick="surrender()"
         >
           Surrender
         </button>
+        <!--
         <button
           style="
-            
+
             padding: 5px 15px;
             background-color: #658ae9;
             font-size: 20px;
@@ -118,6 +119,92 @@
         >
           Change Theme
         </button>
+        -->
+
+        <div class="dropdown" style="display: initial">
+          <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              style="
+                padding: 5px 15px;
+                background-color: #658ae9;
+                font-size: 20px;
+                text-decoration: none;
+              "
+          >
+            Change Theme
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li selected>
+              <a
+                class="dropdown-item"
+                href="#"
+                id="theme1"
+                onclick="theme1()"
+                >Theme 1</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                id="theme2"
+                onclick="theme2()"
+                >Theme 2</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                id="theme3"
+                onclick="theme3()"
+                >Theme 3</a
+              >
+            </li>
+
+
+
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                id="theme4"
+                onclick="theme4()"
+                >Theme 4</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                id="theme5"
+                onclick="theme5()"
+              >Theme 5</a
+              >
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                id="theme6"
+                onclick="theme6()"
+              >Theme 6</a
+              >
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                id="theme7"
+                onclick="theme7()"
+              >Theme 7</a
+              >
+            </li>
+            </li>
+            </li>
+          </ul>
+        </div>
 
         <!--
         <div class="dropdown" style="display: initial">
@@ -206,6 +293,8 @@
       // User module
       let ct = true;
       let surrendered = false;
+      let whiteHex = "#d6d6c2";
+      let blackHex = "#000000";
       let m_m = document.getElementById("m_m");
       m_m.value = 0;
       m_m.innerHTML = 0;
@@ -219,6 +308,41 @@
         console.log(ct);
       }
       console.log(ct);
+
+      function theme1() {
+        whiteHex = "#d6d6c2";
+        blackHex = "#000000";
+      }
+
+      function theme2() {
+        whiteHex = "#cfa76e";
+        blackHex = "#663e0f";
+      }
+
+      function theme3() {
+        whiteHex = "#f0d9b5";
+        blackHex = "#b58863";
+      }
+
+      function theme4() {
+        whiteHex = "#ffffdd";
+        blackHex = "#b6a666";
+      }
+
+      function theme5() {
+        whiteHex = "#f1f6b3";
+        blackHex = "#58945d";
+      }
+
+      function theme6() {
+        whiteHex = "#dee3e6";
+        blackHex = "#8ca2ad";
+      }
+
+      function theme7() {
+        whiteHex = "#9f90b0";
+        blackHex = "#7d4a8d";
+      }
 
       function surrender() {
         surrendered = true;
@@ -366,17 +490,19 @@
       function drawWhitePieces() {
         for (const piece of whitePieces) {
           stroke(0);
-          if (ct) fill(210,180,140);
-          else fill(255);
+          // if (ct)
+          fill(210,180,140);
+          // else fill(255);
           drawPiece(piece);
         }
       }
 
       function drawBlackPieces() {
         for (const piece of blackPieces) {
-          stroke(124);
-          if (ct) fill(92, 64, 51);
-          else fill(0);
+          stroke(150);
+          // if (ct)
+            fill(92, 64, 51);
+          // else fill(0);
           drawPiece(piece);
         }
       }
@@ -405,8 +531,9 @@
             hasPiece(selectX, selectY) &&
             whiteToMove === isWhite(selectX, selectY)
           ) {
-            if (ct) fill(204, 204, 0);
-            else fill(247, 191, 51);
+            // if (ct)
+              fill(204, 204, 0);
+            // else fill(247, 191, 51);
             rect(
               selectX * SQUARE_WIDTH,
               (7 - selectY) * SQUARE_WIDTH,
@@ -416,8 +543,9 @@
           }
 
           noFill();
-          if (ct) stroke(255, 255, 255);
-          else stroke(0, 255, 0);
+          // if (ct)
+            stroke(255, 255, 255);
+          // else stroke(0, 255, 0);
           if (whiteToMove && !whitePlayer.ai) {
             for (const piece of whitePieces) {
               if (!piece.captured && isMoveableWhite(piece.x, piece.y)) {
@@ -451,8 +579,9 @@
           whiteToMove === isWhite(selectX, selectY)
         ) {
           let moves = getMoves(selectX, selectY);
-          if (ct) fill(255, 255, 0, 200);
-          else fill(247, 191, 51, 200);
+          // if (ct)
+          fill(255, 255, 0, 200);
+          // else fill(247, 191, 51, 200);
           for (const move of moves) {
             ellipse(
               move.toX * SQUARE_WIDTH + SQUARE_WIDTH / 2,
@@ -469,8 +598,8 @@
         let whiteFirst = true;
         for (let i = 0; i < 8; i++) {
           for (let j = 0; j < 8; j++) {
-            if (ct) whiteFirst ? fill(214, 214, 194) : fill(0, 0, 0);
-            else whiteFirst ? fill(207, 167, 110) : fill(102, 62, 15);
+            whiteFirst ? fill(whiteHex) : fill(blackHex);
+            // else whiteFirst ? fill(207, 167, 110) : fill(102, 62, 15);
             whiteFirst = !whiteFirst;
             rect(
               i * SQUARE_WIDTH,
@@ -1080,21 +1209,21 @@
 
       let maxDepth = 2;
 
-      function easy() {
-        maxDepth = 2;
-        dropdownMenuButton1.innerHTML = "Easy";
-        console.log("easy", maxDepth);
-      }
-      function moderate() {
-        maxDepth = 6;
-        dropdownMenuButton1.innerHTML = "Moderate";
-        console.log("moderate", maxDepth);
-      }
-      function difficult() {
-        maxDepth = 10;
-        dropdownMenuButton1.innerHTML = "Difficult";
-        console.log("difficult", maxDepth);
-      }
+      // function easy() {
+      //   maxDepth = 2;
+      //   dropdownMenuButton1.innerHTML = "Easy";
+      //   console.log("easy", maxDepth);
+      // }
+      // function moderate() {
+      //   maxDepth = 6;
+      //   dropdownMenuButton1.innerHTML = "Moderate";
+      //   console.log("moderate", maxDepth);
+      // }
+      // function difficult() {
+      //   maxDepth = 10;
+      //   dropdownMenuButton1.innerHTML = "Difficult";
+      //   console.log("difficult", maxDepth);
+      // }
       // function expert() {
       //   maxDepth = 11;
       //   dropdownMenuButton1.innerHTML="Expert";
