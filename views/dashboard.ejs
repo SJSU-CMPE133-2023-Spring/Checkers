@@ -98,7 +98,7 @@
           class="btn btn-success"
           id="surrender"
           value="undefined"
-          onclick="surrender()"
+          onclick="surrenderClick()"
         >
           Surrender
         </button>
@@ -344,7 +344,7 @@
         blackHex = "#7d4a8d";
       }
 
-      function surrender() {
+      function surrenderClick() {
         surrendered = true;
         checkVictory()
         surrendered = false;
