@@ -39,26 +39,33 @@ Step-by-step instructions on how to install the project.
 
 Clone the repo
 
-git clone <https://github.com/your_username_/Project-Name.git>
-Install dependencies
+`git clone <[https://github.com/your_username_/Project-Name.git](https://github.com/SJSU-CMPE133-2023-Spring/Checkers.git)>`
+
 
 commands that needed to install the projects dependencies
-Add more steps (with commands and guidelines) if needed.
 
-Usage
-This section should provide examples or instructions on how to use the project. Provide any information that the user may need to know before getting started, such as expected inputs and outputs, important features or limitations, and so on.
+Install node and npm from: `brew install node`
+Install Express: `npm install express`
 
-Roadmap
-Here you can outline any future plans or improvements for the project. This can include bug fixes, new features, or any other changes that are planned.
 
-Contributing
-Here you should provide instructions on how other developers can contribute to the project. This should include guidelines for submitting pull requests, coding conventions, and any other relevant information.
+<h1>Usage</h1>
+To run the application use: `npm start`
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Features of checkers webapp:
+1. signup/login
+2. start the game to play checkers with AI
+3. customize appearence
+4. check scores
 
-Contact
-Here you can provide information on how to contact you or the project team. This can include email addresses, social media handles, or a link to a website.
+<h1>Roadmap</h1>
+For future scope:
+1. Add a link to the game that user can share, so they can play with friends
+2. Change the shape of board: like Chinese checkers 
+3. Add online streaming option.
+4. Make it multiplayer where more than 2 players can play together.
 
-Acknowledgements
-Here you can give credit to any individuals or organizations that have contributed to the project or provided support.eckers
+<h1>Contact</h1>
+Atharv: [Github]([url](https://github.com/Atharv1207))
+Mariya: Github
+Selim: Github
+
