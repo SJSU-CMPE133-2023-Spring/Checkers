@@ -39,7 +39,7 @@ Step-by-step instructions on how to install the project.
 
 Clone the repo
 
-`git clone <[https://github.com/your_username_/Project-Name.git](https://github.com/SJSU-CMPE133-2023-Spring/Checkers.git)>`
+`git clone <https://github.com/SJSU-CMPE133-2023-Spring/Checkers.git>`
 
 
 commands that needed to install the projects dependencies
